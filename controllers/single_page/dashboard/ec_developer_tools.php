@@ -28,8 +28,8 @@ class EcDeveloperTools extends DashboardPageController
                         $applicationPrefixes[$prefix[0]] = $prefix[1];
                     } elseif (preg_match('/^(Concrete\\\\Package\\\\)([A-Za-z_-]+)(\\\\.*)/', $prefix[0], $matches)) {
                         $dir = Core::make('helper/text')->uncamelcase($matches[2]);
-                        $path = str_replace($dir, '<em>package_handle</em>', $prefix[1]);
-                        $packagePrefixes[$matches[1] . '<em>package_handle</em>' . $matches[3]] = $path;
+                        $path = str_replace($dir, '<em>' . t('package_handle') . '</em>', $prefix[1]);
+                        $packagePrefixes[$matches[1] . '<em>' . t('package_handle') . '</em>' . $matches[3]] = $path;
                     }
                 }
             }
