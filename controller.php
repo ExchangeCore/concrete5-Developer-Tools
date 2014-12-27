@@ -18,7 +18,7 @@ class Controller extends Package
 
     public function getPackageDescription()
     {
-        return t('Provides some dev tools useful for developers.');
+        return t('Provides some tools useful for developers.');
     }
 
     public function install()
