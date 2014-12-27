@@ -46,9 +46,11 @@ class EcDeveloperTools extends DashboardPageController
         $symbols = $generator->render();
         file_put_contents($pkg->getPackagePath() . '/__IDE_SYMBOLS__.php', $symbols);
 
-        $generator = new MetadataGenerator();
-        $symbols = $generator->render();
-        file_put_contents($pkg->getPackagePath() . '/.phpstorm.meta.php', $symbols);
+        if (class_exists('\Concrete\Core\Support\Symbol\MetadataGenerator')) {
+            $generator = new MetadataGenerator();
+            $symbols = $generator->render();
+            file_put_contents($pkg->getPackagePath() . '/.phpstorm.meta.php', $symbols);
+        }
 
         $this->set('message', t('The support files were generated.'));
         $this->view();
