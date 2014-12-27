@@ -1,14 +1,9 @@
 <h3>Support Files</h3>
-<p><a href="<?= $view->action('symbols') ?>" class="btn btn-primary"><?= t('Generate Symbols File') ?></a> <?= t('A symbols file will help your IDE auto-complete classes that are aliased.') ?></p>
-<?php
-if (class_exists('\Concrete\Core\Support\ServiceProvider\MetadataGenerator')) {
-    ?>
-    <p><a href="<?= $view->action('metadata') ?>"
-          class="btn btn-primary"><?= t('Generate PhpStorm/IntellJ IDEA Metadata File') ?></a> <?= t('A metadata file helps PhpStorm and IntelliJ auto-complete instances created using Core::make().') ?>
-    </p>
-<?php
-}
-?>
+<p>
+    <?= t('Support files are used to provide auto-completion support for IDEs. Without these files your IDE may not
+    recognize all classes. The support files also add class type detection for <code>Core::make()</code> usages.') ?>
+</p>
+<p><a href="<?= $view->action('symbols') ?>" class="btn btn-primary"><?= t('Generate Support Files') ?></a></p>
 <hr />
 <h3>Application Namespaces</h3>
 <table class="table table-striped">
