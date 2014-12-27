@@ -3,14 +3,14 @@
     <?= t('Support files are used to provide auto-completion support for IDEs. Without these files your IDE may not
     recognize all classes. The support files also add class type detection for <code>Core::make()</code> usages.') ?>
 </p>
-<p><a href="<?= $view->action('symbols') ?>" class="btn btn-primary"><?= t('Generate Support Files') ?></a></p>
+<p><a href="<?= $view->action('supportFiles') ?>" class="btn btn-primary"><?= t('Generate Support Files') ?></a></p>
 <hr />
-<h3>Application Namespaces</h3>
+<h3><?= t('Application Namespaces') ?></h3>
 <table class="table table-striped">
     <thead>
     <tr>
-        <th>Namespace</th>
-        <th>Directory</th>
+        <th><?= t('Namespace') ?></th>
+        <th><?= t('Directory') ?></th>
     </tr>
     </thead>
     <tbody>
@@ -27,12 +27,12 @@
     </tbody>
 </table>
 <hr />
-<h3>Package Namespaces</h3>
+<h3><?= t('Package Namespaces') ?></h3>
 <table class="table table-striped">
     <thead>
     <tr>
-        <th>Namespace</th>
-        <th>Directory</th>
+        <th><?= t('Namespace') ?></th>
+        <th><?= t('Directory') ?></th>
     </tr>
     </thead>
     <tbody>

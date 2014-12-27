@@ -2,7 +2,7 @@
 namespace Concrete\Package\EcDevTools\Controller\SinglePage\Dashboard;
 
 use Concrete\Core\Page\Controller\DashboardPageController;
-use Concrete\Core\Support\ServiceProvider\MetadataGenerator;
+use Concrete\Core\Support\Symbol\MetadataGenerator;
 use Concrete\Core\Support\Symbol\SymbolGenerator;
 use Core;
 use Package;
@@ -39,23 +39,18 @@ class EcDeveloperTools extends DashboardPageController
         $this->set('packagePrefixes', $packagePrefixes);
     }
 
-    public function symbols()
+    public function supportFiles()
     {
         $pkg = Package::getByHandle('ec_dev_tools');
         $generator = new SymbolGenerator();
         $symbols = $generator->render();
         file_put_contents($pkg->getPackagePath() . '/__IDE_SYMBOLS__.php', $symbols);
-        $this->set('message', t('A symbols file was generated.'));
-        $this->view();
-    }
 
-    public function metadata()
-    {
-        $pkg = Package::getByHandle('ec_dev_tools');
         $generator = new MetadataGenerator();
         $symbols = $generator->render();
         file_put_contents($pkg->getPackagePath() . '/.phpstorm.meta.php', $symbols);
-        $this->set('message', t('A metadata file was generated.'));
+
+        $this->set('message', t('The support files were generated.'));
         $this->view();
     }
 }
