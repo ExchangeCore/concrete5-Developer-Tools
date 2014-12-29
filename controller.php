@@ -26,6 +26,7 @@ class Controller extends Package
         $pkg = parent::install();
         $page = SinglePage::add('/dashboard/ec_developer_tools', $pkg);
         $page->updateCollectionName(t('Developer Tools'));
+        SinglePage::add('/dashboard/ec_developer_tools/namespaces', $pkg);
         return $pkg;
     }
 }
