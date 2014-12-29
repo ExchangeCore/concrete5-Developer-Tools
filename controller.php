@@ -9,7 +9,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'ec_dev_tools';
     protected $appVersionRequired = '5.7.0.4';
-    protected $pkgVersion = '0.9.0';
+    protected $pkgVersion = '0.9.1';
 
     public function getPackageName()
     {
