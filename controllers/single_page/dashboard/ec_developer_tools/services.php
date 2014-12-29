@@ -33,35 +33,12 @@ class Services extends DashboardPageController
                 $reflectionClass = new \ReflectionClass($className);
                 $comment = $reflectionClass->getDocComment();
 
-                $docs = $this->parseDocBlock($comment);
-
-                $services[$name] = array('class' => $className, 'docs' => $docs);
+                $services[$name] = array('class' => $className);
             }
         }
 
         ksort($services);
 
         $this->set('services', $services);
-    }
-
-    private function parseDocBlock($docBlock) {
-        $docs = array();
-        preg_match_all('/\/\*\*\r?\n((?:.*\r?\n)+)[ \t]*\*\//', $docBlock, $docBlocks);
-        if (count($docBlocks) > 1) {
-            for ($i = 1; $i < count($docBlocks); $i++) {
-                $lines = explode("\n", $docBlocks[$i][0]);
-                array_pop($lines);
-                foreach ($lines as &$line) {
-                    $line = ltrim($line, " \t*");
-                }
-
-                $lines = implode("\n", $lines);
-                $lines = nl2br($lines);
-
-                $docs[] = $lines;
-            }
-        }
-
-        return $docs;
     }
 }
