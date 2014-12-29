@@ -9,7 +9,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'ec_dev_tools';
     protected $appVersionRequired = '5.7.0.4';
-    protected $pkgVersion = '0.9.0';
+    protected $pkgVersion = '0.9.1';
 
     public function getPackageName()
     {
@@ -26,6 +26,8 @@ class Controller extends Package
         $pkg = parent::install();
         $page = SinglePage::add('/dashboard/ec_developer_tools', $pkg);
         $page->updateCollectionName(t('Developer Tools'));
+        SinglePage::add('/dashboard/ec_developer_tools/namespaces', $pkg);
+        SinglePage::add('/dashboard/ec_developer_tools/services', $pkg);
         return $pkg;
     }
 }
