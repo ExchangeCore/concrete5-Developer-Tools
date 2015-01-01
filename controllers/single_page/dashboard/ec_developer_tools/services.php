@@ -30,9 +30,6 @@ class Services extends DashboardPageController
                     $className = '\\' . $className;
                 }
 
-                $reflectionClass = new \ReflectionClass($className);
-                $comment = $reflectionClass->getDocComment();
-
                 $services[$name] = array('class' => $className);
             }
         }
