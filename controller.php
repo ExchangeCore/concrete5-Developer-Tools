@@ -29,6 +29,8 @@ class Controller extends Package
         SinglePage::add('/dashboard/ec_developer_tools/namespaces', $pkg);
         SinglePage::add('/dashboard/ec_developer_tools/services', $pkg);
         SinglePage::add('/dashboard/ec_developer_tools/packages', $pkg);
+        $sp = SinglePage::add('/dashboard/ec_developer_tools/packages/entities', $pkg);
+        $sp->setAttribute('exclude_nav', true);
         return $pkg;
     }
 }
