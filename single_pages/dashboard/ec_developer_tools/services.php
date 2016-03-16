@@ -17,7 +17,7 @@
             if (substr($service['class'], 0, 9) == '\\Concrete') {
                 ?>
                 <td>
-                    <a href="http://concrete5.org/api/class-<?= str_replace('\\', '.', ltrim($service['class'], '\\')) ?>.html"
+                    <a href="http://documentation.concrete5.org/api/class-<?= str_replace('\\', '.', ltrim($service['class'], '\\')) ?>.html"
                        target="_blank"><?= $service['class'] ?></a>
                 </td>
                 <?php
