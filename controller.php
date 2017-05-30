@@ -8,8 +8,8 @@ use SinglePage;
 class Controller extends Package
 {
     protected $pkgHandle = 'ec_dev_tools';
-    protected $appVersionRequired = '5.7.0.4';
-    protected $pkgVersion = '1.0.1';
+    protected $appVersionRequired = '8.1.0';
+    protected $pkgVersion = '1.0.2';
 
     public function getPackageName()
     {

@@ -11,10 +11,11 @@ class Entities extends DashboardPageController
     public function view($packageHandle)
     {
         Cache::disableAll();
+        /** @var \Concrete\Core\Package\Package $package */
         $package = Package::getClass($packageHandle);
         $em = $package->getEntityManager();
         $cmf = $em->getMetadataFactory();
-        $driver = $em->getConfiguration()->newDefaultAnnotationDriver($package->getPackageEntitiesPath());
+        $driver = $em->getConfiguration()->newDefaultAnnotationDriver($package->getPackageEntityPaths());
         $classes = $driver->getAllClassNames();
 
         $tests = array();

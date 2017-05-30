@@ -22,7 +22,7 @@ defined('C5_EXECUTE') or die('Access denied.');
     foreach ($installed as $package) {
         ?>
         <tr>
-            <td><?= t('%s (v%s)', $package->pkgName, $package->pkgVersion) ?></td>
+            <td><?= t('%s (v%s)', $package->getPackageName(), $package->getPackageVersion()) ?></td>
             <td nowrap style="width: 1px">
                 <a href="<?= $this->action('entities', $package->getPackageHandle()) ?>"><?= t('View Entities') ?></a>
                 <a href="<?= $this->action('reinstall', $package->getPackageHandle()) ?>"><?= t('Reinstall') ?></a>
